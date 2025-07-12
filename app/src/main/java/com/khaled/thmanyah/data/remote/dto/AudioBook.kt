@@ -8,12 +8,12 @@ import kotlinx.serialization.Serializable
 data class AudioBook(
     @SerialName("audiobook_id") val audiobookId: String,
     override val name: String,
-    @SerialName("author_name") val authorName: String,
-    override val description: String,
-    @SerialName("avatar_url") override val avatarUrl: String,
-    val duration: String,
-    val language: String,
-    @SerialName("release_date") val releaseDate: String,
+    @SerialName("author_name") val authorName: String?="",
+    override val description: String?="",
+    @SerialName("avatar_url") override val avatarUrl: String?="",
+    val duration: String?="",
+    val language: String?="",
+    @SerialName("release_date") val releaseDate: String?="",
     override val score: String
 ) : ContentItem() {
     override val id = audiobookId
