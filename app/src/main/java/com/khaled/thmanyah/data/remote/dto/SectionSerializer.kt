@@ -1,5 +1,6 @@
 package com.khaled.thmanyah.data.remote.dto
 
+import com.khaled.thmanyah.data.remote.deserializer.ContentDeserializerFactory
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind
@@ -35,13 +36,7 @@ object SectionSerializer : KSerializer<Section> {
         val order = jsonObject["order"]?.jsonPrimitive?.content ?: "0"
         val contentJson = jsonObject["content"]?.jsonArray ?: JsonArray(emptyList())
 
-        val content: List<ContentItem> = when (contentType) {
-            "episode" -> contentJson.map { input.json.decodeFromJsonElement(Episode.serializer(), it) }
-            "audio_book" -> contentJson.map { input.json.decodeFromJsonElement(AudioBook.serializer(), it) }
-            "audio_article" -> contentJson.map { input.json.decodeFromJsonElement(AudioArticle.serializer(), it) }
-            "podcast" -> contentJson.map { input.json.decodeFromJsonElement(Podcast.serializer(), it) }
-            else -> contentJson.map { input.json.decodeFromJsonElement(Podcast.serializer(), it) }
-        }
+        val content = ContentDeserializerFactory.deserializeContent(contentType, contentJson, input)
 
         return Section(name, type, contentType, order, content)
     }
