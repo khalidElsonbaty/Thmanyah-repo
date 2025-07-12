@@ -23,6 +23,7 @@ It features a Home Screen that loads dynamic sections and a Search Screen with d
 * Kotlin Coroutines / Flow (Async / Reactive streams)
 * Hilt (Dependency Injection)
 * Unit Tests (UseCase and Repository level)
+* UI Test (Home Screen Compose UI)
 * MVVM (Presentation architecture)
 * Version Catalog (libs.versions.toml) for dependency management
 
@@ -34,6 +35,7 @@ It features a Home Screen that loads dynamic sections and a Search Screen with d
   - remote
     - api/              // Retrofit interfaces
     - dto/              // API models
+    - deserializer/     // Content Deserializer factory design pattern
   - repository/         // Repository implementation
 
 - domain
