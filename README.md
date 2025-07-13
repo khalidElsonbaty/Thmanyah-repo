@@ -83,6 +83,7 @@ It features a Home Screen that loads dynamic sections and a Search Screen with d
 
 ## Challenges
 
+* deserializer multi diff object in the same json.
 * Dynamic rendering of multiple section types (linear/grid).
 * Mapping inconsistent API data into stable domain models.
 * Managing debounce & cancellation of search requests.
@@ -91,7 +92,6 @@ It features a Home Screen that loads dynamic sections and a Search Screen with d
 
 ## Improvements & Suggestions
 
-* Use **Paging 3** for true infinite scroll per section.
 * Add caching layer (e.g., Room or in-memory) to reduce network calls.
 * Add error handling with `sealed` UI states (Loading / Success / Error).
 * Add support for Dark Mode and Theming.
