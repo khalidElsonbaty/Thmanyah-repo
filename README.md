@@ -35,13 +35,13 @@ It features a Home Screen that loads dynamic sections and a Search Screen with d
   - remote
     - api/              // Retrofit interfaces
     - dto/              // API models
-    - deserializer/     // Content Deserializer factory design pattern
+    - deserializer/     // Content Deserializer using factory design pattern
   - repository/         // Repository implementation
 
 - domain
   - model/              // App core models
   - useCase/            // Use cases
-  - mapper/             //   domain mapping
+  - mapper/             // domain mapping
 
 - presentation
   - home/               // Home screen and ViewModel
@@ -83,7 +83,7 @@ It features a Home Screen that loads dynamic sections and a Search Screen with d
 
 ## Challenges
 
-* deserializer multi diff object in the same json.
+* deserializer multi diff object in the same json using Content Deserializer Factory.
 * Dynamic rendering of multiple section types (linear/grid).
 * Mapping inconsistent API data into stable domain models.
 * Managing debounce & cancellation of search requests.
